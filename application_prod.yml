@@ -30,7 +30,7 @@ eureka:
       defaultZone: http://127.0.0.1:6868/eureka
 ---
 server:
-  port: 9002
+  port: 9003
 
 
 #DB Configuration:
