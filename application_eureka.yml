@@ -1,0 +1,23 @@
+server:
+  port: 6868
+spring:
+   profiles: dev
+eureka:
+  client:
+    registerWithEureka: false # 服务注册开关
+    fetchRegistry: false # 服务发现开关
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/ #对外暴露的注册地址
+      
+---
+
+server:
+  port: 6869
+spring:
+   profiles: prod
+eureka:
+  client:
+    registerWithEureka: false # 服务注册开关
+    fetchRegistry: false # 服务发现开关
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/ #对外暴露的注册地址

@@ -1,0 +1,85 @@
+
+server:
+  port: 9999
+
+
+#DB Configuration:
+
+spring:
+  profiles: dev
+  application:
+    name: zuul_server #指定服务名
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance:
+    prefer-ip-address: true
+
+
+zuul:
+  routes:
+    order-service: #微服务名称
+      path: /order_path/** #配置请求URL的请求规则
+    product-service: #微服务名称
+      path: /prod_path/** #配置请求URL的请求规则
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE
+          thread:
+            timeout-in-milliseconds: 6000 # 熔断超时时长：6000ms
+ribbon:
+  ReadTimeout: 30000 # 通信超时时间(ms)
+  ConnectTimeout: 15000 # 连接超时时间(ms)
+  
+---
+
+
+server:
+  port: 9998
+
+
+#DB Configuration:
+
+spring:
+  profiles: dev
+  application:
+    name: zuul_server #指定服务名
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance:
+    prefer-ip-address: true
+
+
+zuul:
+  routes:
+    order-service: #微服务名称
+      path: /order_path/** #配置请求URL的请求规则
+    product-service: #微服务名称
+      path: /prod_path/** #配置请求URL的请求规则
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE
+          thread:
+            timeout-in-milliseconds: 6000 # 熔断超时时长：6000ms
+ribbon:
+  ReadTimeout: 30000 # 通信超时时间(ms)
+  ConnectTimeout: 15000 # 连接超时时间(ms)
+
+
+
+
+
+
