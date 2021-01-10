@@ -9,6 +9,11 @@ spring:
   profiles: dev
   application:
     name: zuul_server #指定服务名
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 eureka:
   client:
@@ -47,9 +52,14 @@ server:
 #DB Configuration:
 
 spring:
-  profiles: dev
+  profiles: prod
   application:
     name: zuul_server #指定服务名
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 eureka:
   client:
