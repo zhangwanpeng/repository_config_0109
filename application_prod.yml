@@ -40,7 +40,7 @@ spring:
     name: product-service #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/springcloud_jingdong2?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://127.0.0.1:3306/springcloud_jingdong?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
     username: root
     password: root
 
