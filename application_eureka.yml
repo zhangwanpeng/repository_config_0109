@@ -2,6 +2,11 @@ server:
   port: 6868
 spring:
    profiles: dev
+   rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 eureka:
   client:
     registerWithEureka: false # 服务注册开关
@@ -15,6 +20,11 @@ server:
   port: 6869
 spring:
    profiles: prod
+   rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 eureka:
   client:
     registerWithEureka: false # 服务注册开关
